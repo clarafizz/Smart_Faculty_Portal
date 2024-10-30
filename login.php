@@ -1,11 +1,9 @@
 <html>
     <head>
-
+  
     </head>
     <body>
-        <?php
-session_start();
-?>
+       
 <div class="container d-flex justify-content-center align-items-center vh-100">
   <div class="border border-success bg-white p-4 rounded w-50">
     <div id="form-container">
