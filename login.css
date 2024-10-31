@@ -1,2 +1,85 @@
-body { background-color: (42,155,103);
-    background-image: (90deg, rgba(42,155,103,1) 0%, rgba(23,248,174,1) 68%, rgba(203,255,238,1) 100%);} 
+body {
+    object-fit: cover;
+    background-color: (42, 155, 103);
+    background-image: linear-gradient(90deg, rgba(42, 155, 103, 1), rgba(23, 248, 174, 1), rgba(116, 245, 203, 1));
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+#systemName {
+    background: -webkit-linear-gradient(#098e50, #134930);
+    -webkit-text-fill-color: transparent;
+    font-size: 9.9vw;
+
+}
+
+h2 {
+    font-size: 5.1vw;
+    background: -webkit-linear-gradient(#098e50, #197e4f);
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 35px;
+}
+
+#systemName, h2 {
+    -webkit-background-clip: text;
+}
+
+#containerTwo {
+    margin: auto;
+}
+
+
+@media (min-width: 320px) {
+    #containerTwo {
+        width: 100%;
+        margin: auto;
+    }
+    label, p, button {
+        font-size: 13px;
+        
+    }
+}
+
+@media (min-width: 375px) {
+    #containerTwo {
+        width: 100%;
+        margin: auto;
+    }
+}
+
+@media (min-width: 425px) {
+    #containerTwo {
+        width: 100%;
+        margin: auto;
+    }
+}
+
+@media (min-width: 768px) {
+    #containerTwo {
+        width: 80%;
+        margin: auto;
+    }
+}
+
+@media (min-width: 1024px) {
+    #containerTwo {
+        width: 60%;
+        margin: auto;
+    }
+}
+
+@media (min-width: 1024px) {
+    #containerTwo {
+        width: 50%;
+        margin: auto;
+    }
+}
+
+@media (min-width: 2560px) {
+    #containerTwo {
+        width: 40%;
+        margin: auto;
+        
+    }
+   
+}
