@@ -5,25 +5,58 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <style>
+    body {
+      object-fit: cover;
+      background-color: (42, 155, 103);
+      background-image: linear-gradient(90deg, rgba(42, 155, 103, 1), rgba(23, 248, 174, 1), rgba(116, 245, 203, 1));
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+    }
 
+    #systemName {
+      background: -webkit-linear-gradient(#098e50, #134930);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-size: 150px;
+    }
+
+    h2 {
+      font-size: 110px;
+      background: -webkit-linear-gradient(#098e50, #197e4f);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 0;
+    }
+
+    @media only screen and (max-width: 620px) {
+
+      /* For mobile phones: */
+      #containerOne,
+      #containerTwo {
+        width: 100%;
+      }
+    }
+  </style>
 </head>
 
 <body>
   <?php
   session_start();
   ?>
-  <div class="container">
+  <div class="container-fluid">
     <div class="row">
       <div class="d-flex vh-100">
         <!-- Container 1 -->
-        <div class="col-xl-7 col-lg-7 col-md-12 align-self-end">
+        <div id="containerOne" class="col align-self-start">
           <div class="p-5 w-100 ">
-            <h1>Smart Faculty Portal</h1>
+            <h1 id="systemName">SMART<h1>
+                <h2>Faculty Portal</h2>
           </div>
         </div>
         <!-- Container 2 -->
-        <div class="col-xl-5 col-lg-5 col-md-12 align-self-center">
-          <div class="border border-success bg-white p-2 rounded shadow p-3 mb-5 bg-body rounded">
+        <div id="containerTwo" class="col align-self-center">
+          <div class="border border-success p-2 rounded shadow p-3 bg-body rounded-pill">
             <!-- Login Form -->
             <div id="form-container">
               <div id="login-form">
@@ -47,33 +80,34 @@
                 endif; ?>
                 <!-- Login form  -->
                 <form action="http://localhost/SmartFacultyPortal_v1/controllers/loginController.php" method="POST">
-                  <div class="mb-3">
-                    <label for="userName" class="form-label">Username</label>
-                    <input type="text" class="form-control" id="userName" name="userName"
-                      value="<?= isset($_COOKIE['userName']) ? htmlspecialchars($_COOKIE['userName']) : ''; ?>"
-                      required>
-                  </div>
-                  <div class="mb-3 position-relative">
-                    <label for="password" class="form-label">Password</label>
-                    <div class="input-group">
-                      <input type="password" class="form-control" id="password" name="password"
-                        placeholder="Enter password" required>
-                      <span class="input-group-text" style="cursor: pointer;"
-                        onclick="togglePasswordVisibility('password', 'toggleIcon')">
-                        <i class="bi bi-eye" id="toggleIcon"></i>
-                      </span>
+                  <div class="mx-auto text-center">
+                    <div>
+                      <h1 class="text-center mb-3">Login</h1>
                     </div>
-                  </div>
-                  <div class="mb-3 form-check">
-                    <input type="checkbox" class="form-check-input" id="remember" name="remember" <?php if (isset($_COOKIE['userName']))
-                      echo 'checked'; ?>>
-                    <label class="form-check-label" for="remember">Remember me</label>
-                  </div>
-                  <button type="submit" class="btn btn-primary w-100">Login</button>
-                  <div class="mt-3 text-center">
-                    <p>Don't have an account? <a href="#" onclick="showForm('register-form', 'login-form')">Register
-                        here</a>
-                    </p>
+                    <div class="form-floating mb-3 d-flex justify-content-center">
+
+                      <input type="text" class="form-control rounded-pill w-75 px-4" id="userName" name="userName"
+                        placeholder="Enter username"
+                        value="<?= isset($_COOKIE['userName']) ? htmlspecialchars($_COOKIE['userName']) : ''; ?>"
+                        required>
+                      <label class="w-50" for="userName">Username</label>
+                    </div>
+                    <div class="form-floating mb-3 d-flex justify-content-center">
+                      <input type="password" class="form-control rounded-pill px-4 w-75" id="password" name="password"
+                        placeholder="Enter password" required>
+                      <label for="password" class="bi bi-eye w-50">Password</label>
+                    </div>
+                    <div class="mb-3 form-check d-flex justify-content-start">
+                      <input type="checkbox" class="form-check-input ms-5" id="remember" name="remember" <?php if (isset($_COOKIE['userName']))
+                        echo 'checked'; ?>>
+                      <label class="form-check-label ms-2" for="remember">Remember me</label>
+                    </div>
+                    <button type="submit" class="btn text-white bg-primary bg-gradient rounded-pill w-75">Login</button>
+                    <div class="mt-3 text-center">
+                      <p>Don't have an account? <a href="#" onclick="showForm('register-form', 'login-form')">Register
+                          here</a>
+                      </p>
+                    </div>
                   </div>
                 </form>
               </div>
