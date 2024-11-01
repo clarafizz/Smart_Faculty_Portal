@@ -52,7 +52,7 @@
               <form action="http://localhost/SmartFacultyPortal_v1/controllers/loginController.php" method="POST">
                 <div class="mx-auto text-center">
                   <div>
-                    <h1 class="text-center mt-5 mb-3">Login</h1>
+                    <h1 class="text-center mt-2 mb-3">Login</h1>
                   </div>
                   <div class="form-floating mb-3 d-flex justify-content-center">
 
@@ -62,19 +62,19 @@
                       required>
                     <label class="w-50" for="userName">Username</label>
                   </div>
-                  <div class="form-floating mb-3 d-flex justify-content-center">
+                  <div class="form-floating mb-2 d-flex justify-content-center">
                     <input type="password" class="form-control rounded-pill px-4 w-75" id="password" name="password"
                       placeholder="Enter password" required>
                     <label for="password" class="bi bi-eye w-50">Password</label>
                   </div>
-                  <div class="mb-3 form-check d-flex justify-content-center">
+                  <div class="mb-2 form-check d-flex justify-content-center">
                     <input type="checkbox" class="form-check-input" id="remember" name="remember" <?php if (isset($_COOKIE['userName']))
                       echo 'checked'; ?>>
                     <label class="form-check-label ms-2" for="remember">Remember me</label>
                   </div>
                   <button type="submit" class="btn text-white bg-primary bg-gradient rounded-pill w-75">Login</button>
-                  <div class="mt-3 mb-5 text-center">
-                    <p>Don't have an account? <a href="#" onclick="showForm('register-form', 'login-form')">Register
+                  <div class="mt-3 mb-4 text-center">
+                    <p>Don't have an account?<br><a href="#" onclick="showForm('register-form', 'login-form')">Register
                         here</a>
                     </p>
                   </div>
